@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="learningOnclick()">ON click</button>
+    <br>
+    <b>Enter your Name :</b>
+    <input type="text" id="uname" placeholder="enter your name" onblur="learningOnblur()" onfocus="learningOnFocus()">
+
+    <script>
+        function learningOnclick(){
+            alert('you have clicked on the button')
+        }
+        //This function attempts to convert the text entered in the input field to uppercase when it loses focus.
+        function learningOnblur(){
+            let username=document.getElementById('uname')
+            username.value=username.value.toUpperCase();
+        }
+
+        //Changes the background color of the input field to light blue when the field gains focus (when clicked or tabbed into).
+        function learningOnFocus(){
+            document.getElementById('uname').style.background='green';
+        }
+    </script>
+</body>
+</html>
