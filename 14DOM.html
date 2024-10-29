@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Get Element by ID</h1>
+    <h3>Quote for the day</h3>    
+    <p id="quote"></p>
+    <button onclick="getelelementbyid()">Click me</button>
+<br><hr>
+
+    <h1>Get Element by NAME</h1>
+    <h3>Technical skills</h3>
+    <input type="radio" name="technology" value="Javascript">Javascript
+    <input type="radio" name="technology" value="Java">Java
+    <input type="radio" name="technology" value="Node">Node
+    <button onclick="getelementbyname()">Click to know all technologies</button>
+    <br>
+<hr>
+    <h1>Get Element by Tag</h1>
+    <h3>List of colors</h3>
+    <ul>
+        <li>Red</li>
+        <li>Green</li>
+        <li>Blue</li>
+        <li>White</li>
+    </ul>
+    <h3>My favourite color is :</h3>
+    <h3 id="color"></h3>
+    <button onclick="getelementbytagname()">Click to know favourite color</button>
+
+    <script>
+        function getelelementbyid(){
+            document.getElementById('quote').innerHTML='it is not a bug it is undocumented feature';
+        }
+
+        function getelementbyname(){
+            var technologies=document.getElementsByName('technology')
+            alert(`Number of Technologies :${technologies.length}`)
+        }
+
+        function getelementbytagname(){
+            var colors=document.getElementsByTagName('li');
+            document.getElementById('color').innerHTML=colors[3].innerHTML;
+        }
+    </script>
+</body>
+</html>
