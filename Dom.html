@@ -1,0 +1,71 @@
+Here's how you can include JavaScript directly inside the HTML file using a <script> tag:
+
+Full HTML Code with Inline JavaScript:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+</head>
+<body>
+  <h1 id="main-heading">Welcome to the DOM Example</h1>
+  <p class="description">This is an example paragraph.</p>
+  <button id="change-text">Change Text</button>
+  <button id="add-item">Add List Item</button>
+  <ul id="item-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  <script>
+    // Accessing an element by its ID
+    const heading = document.getElementById('main-heading');
+    console.log('Heading:', heading.textContent);
+
+    // Accessing elements by class name
+    const description = document.querySelector('.description');
+    console.log('Description:', description.textContent);
+
+    // Changing content dynamically
+    const changeTextButton = document.getElementById('change-text');
+    changeTextButton.addEventListener('click', () => {
+      heading.textContent = 'DOM Manipulation is Fun!';
+      description.textContent = 'We just updated the text using JavaScript!';
+      console.log('Text updated');
+    });
+
+    // Adding a new list item dynamically
+    const addItemButton = document.getElementById('add-item');
+    const itemList = document.getElementById('item-list');
+
+    addItemButton.addEventListener('click', () => {
+      const newItem = document.createElement('li'); // Create a new <li> element
+      newItem.textContent = `Item ${itemList.children.length + 1}`; // Set its text content
+      itemList.appendChild(newItem); // Append the new item to the list
+      console.log('New item added');
+    });
+  </script>
+</body>
+</html>
+
+Key Points:
+
+1. The <script> tag is included directly within the HTML document.
+
+
+2. JavaScript is written inline, typically just before the closing </body> tag. This ensures the DOM is fully loaded before the script runs.
+
+
+3. The functionality remains the same:
+
+The "Change Text" button updates the heading and paragraph text.
+
+The "Add List Item" button adds a new item to the list.
+
+
+
+
+This approach keeps everything in a single file, which is great for small projects or quick prototypes. For larger projects, separating JavaScript into its own file is recommended for maintainability.
+
